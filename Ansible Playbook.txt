@@ -1,0 +1,10 @@
+### Ansible Playbook
+#### playbook.yml
+```yaml
+- hosts: localhost
+  tasks:
+    - name: Configure kubeconfig
+      shell: aws eks update-kubeconfig --name laravel-eks-cluster
+    - name: Apply Kubernetes manifests
+      shell: kubectl apply -f k8s-manifests/
+```
